@@ -1,0 +1,15 @@
+docker environment
+
+postgres database
+  keep data between resets
+
+redis?
+
+local project files
+
+
+
+
+
+docker exec -it [container-id] bash
+docker compose run --rm <service> <command>

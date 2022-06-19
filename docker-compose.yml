@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  dev:
+    user: $USERID:$GROUPID
+    build:
+      context: ./.docker/rails
+      args:
+        RUBY_VERSION: "3.1.1"
+        NODE_MAJOR: "17"
+        YARN_VERSION: "1.22.4"
+        RAILS_VERSION: "7.0.2.2"
+        USERID: $USERID 
+        GROUPID: $GROUPID
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/.docker
+    stdin_open: true
+    tty: true
